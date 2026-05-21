@@ -8,7 +8,7 @@ import goalRoutes from './routes/goalRoutes';
 import habitRoutes from './routes/habitRoutes';
 import expenseRoutes from './routes/expenseRoutes';
 import studyRoutes from './routes/studyRoutes';
-import { errorHandler, notFound } from './middleware/errorHandler';
+import { errorHandler } from './middleware/errorHandler';
 
 export const createApp = () => {
   const app = express();
@@ -47,7 +47,9 @@ export const createApp = () => {
   app.use('/api/study', studyRoutes);
   console.log('[LifeOS API] Study routes mounted at /api/study');
 
-  app.use(notFound);
+  app.use((req, res) => {
+    res.status(404).json({ message: 'Route not found' });
+  });
   app.use(errorHandler);
 
   return app;

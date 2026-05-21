@@ -18,6 +18,8 @@ export const createApp = () => {
     'https://life-os-ai-web-9y2l.vercel.app'
   ];
 
+  console.log('CORS enabled for:', allowedOrigins);
+
   app.use(
     cors({
       origin: allowedOrigins,

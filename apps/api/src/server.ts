@@ -7,6 +7,7 @@ const start = async () => {
 
   const app = createApp();
   app.listen(env.port, () => {
+    console.log('[LifeOS API] Environment:', process.env.NODE_ENV);
     console.log(`[LifeOS API] Running on http://localhost:${env.port}`);
   });
 };

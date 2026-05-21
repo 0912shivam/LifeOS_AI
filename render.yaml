@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: lifeos-ai-api
+    env: node
+    plan: free
+    buildCommand: npm run build --workspace apps/api
+    startCommand: npm run start --workspace apps/api
+    envVars:
+      - key: MONGODB_URI
+        scope: runtime
+      - key: JWT_SECRET
+        scope: runtime
+      - key: CLIENT_URL
+        value: https://lifeos-ai-web.onrender.com
+      - key: NODE_ENV
+        value: production

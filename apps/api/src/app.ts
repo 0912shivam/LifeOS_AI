@@ -13,7 +13,18 @@ import { errorHandler, notFound } from './middleware/errorHandler';
 export const createApp = () => {
   const app = express();
 
-  app.use(cors({ origin: env.clientUrl, credentials: true }));
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'https://life-os-ai-web-9y2l.vercel.app'
+  ];
+
+  app.use(
+    cors({
+      origin: allowedOrigins,
+      credentials: true
+    })
+  );
+  app.options('*', cors({ origin: allowedOrigins, credentials: true }));
   app.use(express.json());
   app.use(morgan('dev'));
 

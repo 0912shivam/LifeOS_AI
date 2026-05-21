@@ -1,7 +1,16 @@
 import { DashboardPayload, Expense, Goal, Habit, StudyTask, UserProfile } from './types';
 import { dashboard as mockDashboard } from './mock-data';
 
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiBaseUrl = rawApiUrl ? `${rawApiUrl.replace(/\/$/, '')}/api` : '';
+
+if (typeof window !== 'undefined') {
+  if (!rawApiUrl) {
+    console.warn('[LifeOS Web] NEXT_PUBLIC_API_URL is not set. Configure it in Vercel.');
+  } else {
+    console.log('[LifeOS Web] API base URL:', apiBaseUrl);
+  }
+}
 
 type AuthResponse = {
   token: string;
@@ -43,6 +52,9 @@ function clearAuthState(): void {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (!apiBaseUrl) {
+    throw new Error('NEXT_PUBLIC_API_URL is not set. Configure it in the Vercel environment settings.');
+  }
   const response = await fetch(`${apiBaseUrl}${path}`, {
     ...init,
     headers: {

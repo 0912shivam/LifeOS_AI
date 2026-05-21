@@ -85,7 +85,7 @@ export function AuthForm({ mode }: { mode: Mode }) {
         </form>
 
         <p className="text-sm text-slate-400">
-          {mode === 'login' ? 'Having trouble? Make sure the API is running on localhost:4000.' : 'Already have an account? Go to login.'}
+          {mode === 'login' ? 'Having trouble? Check that the API URL is set in Vercel.' : 'Already have an account? Go to login.'}
         </p>
       </Card>
     </motion.div>

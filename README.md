@@ -131,7 +131,3 @@ The API now requires a live MongoDB instance. If `MONGODB_URI` is not set or the
 	"notes": "Focus on server actions and state management."
 }
 ```
-
-## Notes
-
-The frontend still includes local mock fallbacks for demo viewing, but the backend persistence layer now reads and writes real MongoDB data. Connect a MongoDB instance and replace the sample credentials before production use.

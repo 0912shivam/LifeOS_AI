@@ -8,7 +8,7 @@ LifeOS AI is a full-stack personal life management system for goals, habits, exp
 - Backend: Node.js, Express, MongoDB, JWT
 - Charts: Recharts
 
-## Folder Structure
+## FOLDER STRUCTURE
 
 - `apps/web` - Next.js dashboard UI
 - `apps/api` - Express API, MongoDB models, JWT auth

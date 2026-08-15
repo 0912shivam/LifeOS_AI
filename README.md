@@ -43,7 +43,7 @@ The API now requires a live MongoDB instance. If `MONGODB_URI` is not set or the
 - `JWT_SECRET` - JWT signing secret
 - `CLIENT_URL` - Frontend origin for CORS
 
-### Web
+### WEB
 
 - `NEXT_PUBLIC_API_URL` - API base URL, default `http://localhost:4000/api`
 

@@ -13,7 +13,7 @@ LifeOS AI is a full-stack personal life management system for goals, habits, exp
 - `apps/web` - Next.js dashboard UI
 - `apps/api` - Express API, MongoDB models, JWT auth
 
-## Quick Start
+## QUICK START
 
 1. Install dependencies.
 

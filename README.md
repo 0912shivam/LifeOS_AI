@@ -2,7 +2,7 @@
 
 LifeOS AI is a full-stack personal life management system for goals, habits, expenses, studies, and productivity.
 
-## Stack
+## STACK
 
 - Frontend: Next.js, React, Tailwind CSS, Framer Motion, Recharts
 - Backend: Node.js, Express, MongoDB, JWT

@@ -130,4 +130,4 @@ The API now requires a live MongoDB instance. If `MONGODB_URI` is not set or the
 	"examReminderAt": "2026-06-12T00:00:00.000Z",
 	"notes": "Focus on server actions and state management."
 }
-```
+
